@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>ALPR</title>
+</head>
+
+<body>
+    {% load static %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mx-3">
+        <!-- NAVBAR SECTION -->
+        <div class="container-fluid">
+            <nav class="navbar navbar-light bg-light">
+                <div class="container-fluid blue-400">
+                    <span class="navbar-brand mb-0 h1" style="color: blue;">PLATE RECOGNIZER</span>
+                </div>
+            </nav>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'usecase' %}">Usecases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="container px-3 py-2" id="featured-3">
+
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3" >
+                <div class="feature col card-body" style="border: 1px solid gainsboro; padding: 1px;">
+                    <div class="feature-icon bg-gradient">
+                        <img class="bd-placeholder-img card-img-top" src="{% static 'IMAGES/usecase/traffi.jpg' %}"
+                            alt="" srcset="" width="200" height="250">
+                        <br>
+                    </div>
+                    <h3 style="margin-bottom: 8px;"> Traffic Management & Ticketing</h3>
+                    <p>ANPR solution is used by
+                        Traffic Management Authorities count to curb
+                        sign
+                        vandalisms, lane change violation, over
+                        speeding, wrong way movement, illegal parking &
+                        other traffic violations.</p>
+
+                </div>
+                <div class="feature col card-body" style="padding: 1px;border:1px solid gainsboro;">
+                    <div class="feature-icon bg-gradient">
+                        <img class="bd-placeholder-img card-img-top" src="{% static 'IMAGES/usecase/law.jpg' %}" alt=""
+                            srcset="" width="200" height="250">
+                    </div>
+                    <h3>Law Enforcement</h3>
+                    <p>Law Enforcers can identify &
+                        track down suspected, defaulter or stolen
+                        vehicles using AllGoVision ANPR and search for
+                        vehicles using Smart Search based on
+                        attributes such as Vehicle colour on real time
+                        basis.</p>
+                </div>
+                <div class="feature col card-body" style="border: 1px solid gainsboro; padding: 1px;">
+                    <div class="feature-icon bg-primary bg-gradient">
+                        <img class="bd-placeholder-img card-img-top" src="{% static 'IMAGES/usecase/parking.jpg' %}"
+                            alt="" srcset="" width="200" height="250">
+                    </div>
+                    <h3>Toll Management</h3>
+                    <p>AllGoVision ANPR helps Highway
+                        Authorities to record and control entry/exit
+                        at Highway Toll gates. The solution can be
+                        integrated with the existing infrastructure to
+                        manage Toll operations and fee calculation based
+                        on Vehicle Usage Type & Vehicle
+                        Orientation.</p>
+                </div>
+            </div>
+            <div class="container px-3 py-2" id="featured-3">
+
+                <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                    <div class="feature col card-body" style="border: 1px solid gainsboro; padding: 1px;">
+                        <div class="feature-icon bg-primary bg-gradient">
+                            <img class="bd-placeholder-img card-img-top"
+                                src="{% static 'IMAGES/usecase/authorized.jpg' %}" alt="" srcset="" width="200"
+                                height="250">
+                        </div>
+                        <h3>Authorized Access control</h3>
+                        <p>Catering to an advanced used
+                            case such as Access Control to a secure zone
+                            can be enabled with Multi Factor Authentication
+                            – MFA using various combinations of ANPR,
+                            Face-recognition.</p>
+                    </div>
+                    <div class="feature col card-body" style="border: 1px solid gainsboro; padding: 1px;">
+                        <div class="feature-icon bg-primary bg-gradient">
+                            <img class="bd-placeholder-img card-img-top" src="{% static 'IMAGES/usecase/parking.jpg' %}"
+                                alt="" srcset="" width="200" height="250">
+                        </div>
+                        <h2>Parking Management</h2>
+                        <p>With AllGoVision ANPR, managing operations at public parking spaces become highly efficient.
+                            With vehicle Ingress/egress tracking, Automated Boom Barrier control, Parking time & fee
+                            calculation, slot allotment, wrong way detection & tailgating along with parking vehicle
+                            statistics to heighten parking discipline & operational efficiencies.</p>
+                    </div>
+                    <div class="feature col card-body " style="border: 1px solid gainsboro; padding: 1px;">
+                        <div class="feature-icon bg-primary bg-gradient">
+                            <img class="bd-placeholder-img card-img-top"
+                                src="{% static 'IMAGES/usecase/goverment.jpeg' %}" alt="" srcset="" width="200"
+                                height="250">
+                        </div>
+                        <h4>PUBLIC SAFETY & CONTACTLESS COMPLIANCE</h4>
+                        <p>In this always-on, connected era—and with health concerns associated with close contact—it
+                            has never been more important to keep government interaction with citizens clear,
+                            drama-free, and digital. Plate recognizer provides government agencies with operational data.</p>
+                    </div>
+
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                crossorigin="anonymous"></script>
+
+</body>
+
+</html>

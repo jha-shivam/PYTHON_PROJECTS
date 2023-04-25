@@ -1,0 +1,145 @@
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>ALPR</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .btn {
+            border: 2px solid gray;
+            color: gray;
+            background-color: white;
+            padding: 6px 18px;
+            border-radius: 2px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .upload-btn-wrapper input[type=file] {
+            font-size: 60px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+        }
+
+        input {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mx-2 my-2">
+        <!-- NAVBAR SECTION -->
+        <div class="container-fluid">
+            <nav class="navbar navbar-light bg-light">
+                <div class="container-fluid blue-400">
+                    <span class="navbar-brand mb-0 h2"
+                        style="color: blue; font-size: 20px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">PLATE
+                        RECOGNIZER</span>
+                </div>
+            </nav>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'usecase' %}">Usecases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'contact' %}">Contact</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                    </li>
+                </ul>
+              
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div class="container my-5">
+     <h3>Contact Us</h3>
+     <form action="/contact/" method="post">{% csrf_token %}
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+      </div>
+      <div class="form-group">
+        <label for="name">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+      </div>
+      <div class="form-group">
+        <label for="name">Phone</label>
+        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number">
+      </div>
+       <div class="form-group">
+            <label for="desc">How May We Help You ?</label>
+            <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-success" onclick="alert('Thanks for contacting us. We are as soon as solve your problem.')">Submit</button>
+     </form>
+ </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<script>
+    if (localStorage.getItem('cart') == null) {
+      var cart = {}
+    } else {
+      cart = JSON.parse(localStorage.getItem('cart'))
+    }
+    var sum = 0;
+    if ($.isEmptyObject(cart)){
+      //if object is empty
+      mystr = `<h5><b>Your Cart is Empty. Please add some items before checking out.</b></h5>`;
+      $('#items').append(mystr);
+    }
+    else{
+      for (item in cart) {
+        let name = cart[item][1]
+        let qty = cart[item][0]
+        sum = sum + qty;
+        mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+              ${name}
+              <span class="badge bg-primary rounded-pill">${qty}</span>
+            </li>`;
+        $('#items').append(mystr);
+      }
+    }
+    document.getElementById('cart').innerHTML = sum;
+  </script>
+
+</body>
+
+</html>

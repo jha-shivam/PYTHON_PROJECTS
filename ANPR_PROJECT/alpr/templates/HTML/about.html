@@ -1,0 +1,264 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="about.css">
+
+    <title>ALPR</title>
+    <style>
+        /* .container{
+        background-image: url(../IMG/bg.jpg);
+        background-repeat: no-repeat;
+        height: 100vh;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+
+    } */
+        a {
+            text-decoration: none;
+        }
+
+        @media only screen and (max-width: 800px) {
+            table td {
+                display: none;
+            }
+
+            table,
+            table td,
+            table tr {
+                display: block;
+                width: 100%;
+            }
+
+            table tr {
+                margin-bottom: 15px;
+            }
+
+            table tr td {
+                text-align: left;
+                padding-left: 0;
+                position: relative;
+            }
+
+            table td::before {
+                position: absolute;
+                left: 0;
+                width: 50%;
+                padding-left: 0px;
+                font-weight: 600;
+                font-size: 14px;
+                text-align: left;
+            }
+
+            div.overview {
+                display: inline;
+                position: relative;
+                width: 50%;
+                font-weight: 600;
+                font-size: 14px;
+                text-align: left;
+                word-wrap: break-word;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mx-3">
+        <!-- NAVBAR SECTION -->
+        <div class="container-fluid">
+            <nav class="navbar navbar-light bg-light">
+                <div class="container-fluid blue-400">
+                    <span class="navbar-brand mb-0 h1" style="color: blue;">PLATE RECOGNIZER</span>
+                </div>
+            </nav>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'usecase' %}">Usecases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'about' %}">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <!-- ABOUT SECTION -->
+        <div class="container my-5">
+            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+                <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                    <table>
+                        <tr>
+                            <td style="padding-right: 50px;">
+                                <h2><b>
+                                        <pre>About Us</pre>
+                                    </b></h2>
+                                <pre>Automatic License-plate recognition(ALPR) is a technology that
+uses optical character recognition on images to read vehicle 
+registration plates.
+                                
+Rapid technological developments have allowed DaHua to enable 
+camera-side integration of ANPR technology. This means it can 
+be wide used to improve efficiency and security in defferent 
+solutions. In anddition, this camera-side ALPR is more cost-
+effective than traditional server-side analysis solutions.</pre>
+                            </td>
+                            <td class="about">
+                                <img src="{% static 'IMAGES/about/about.png' %}" alt="Image not found" width="400px"
+                                    height="200px">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="container my-5">
+            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+                <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                    <h2><b>
+                            <pre>Overview</pre>
+                        </b></h2>
+                    <table>
+                        <tr>
+                            <td style="padding-right: 50px;">
+                                <pre>
+Automatic License Plate Recognition (ALPR) system is a techn
+ology that uses optical character recognition (OCR) to autom
+atically read license plate numbers on vehicles. It consists
+of cameras, software, and hardware components that work toge
+-ther to capture an image of a license plate, process the im
+-age, and convert the image into a usable text format.
+
+ALPR systems can be used for a variety of purposes, includin
+-g law enforcement, parking enforcement, toll collection, an
+d traffic management. In law enforcement, ALPR systems can be
+used to quickly identify and track vehicles of interest, such
+as stolen vehicles or those associated with criminal activity.
+In parking enforcement, ALPR systems can be used to monitor pa
+-rking violations and issue fines. In toll collection, ALPR sy
+-stems can be used to automatically charge drivers for tolls w
+-ithout the need for toll booths or human intervention.In traf
+-fic management, ALPR systems can be used to monitor traffic f
+-low and detect traffic violations.
+
+The ALPR system works by capturing an image of a vehicle's li
+cense plate using a camera, which is often mounted on a pole 
+or on a police vehicle. The image is then processed by softwa
+-re that is capable of recognizing and decoding the characters 
+on the license plate. Once the characters are decoded, the ALP
+R system can then use that information for various purposes, su
+-ch as comparing the plate number against a database of known 
+stolen vehicles or issuing a parking violation ticket.
+
+ALPR systems can be highly accurate, with the ability to read 
+license plates even in low-light conditions and at high speeds.
+However,there are concerns about privacy and the potential for 
+misuse of the technology. Some people worry that ALPR systems c
+-ould be used to track individuals' movements or used for mass 
+surveillance without proper oversight.
+</pre>
+                            </td>
+                            <td>
+                                <img src="{% static 'IMAGES/about/overview.png' %}" alt="Image not found" width="450px"
+                                    height="250px"><br><br>
+                                <img src="{% static 'IMAGES/about/overview2.jpg' %}" alt="Image not found" width="450px"
+                                    height="250px">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="container my-5">
+            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+                <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                    <table>
+                        <tr>
+                            <td style="padding-right: 50px;" class="about">
+                                <h2><b>
+                                        <pre>Key Technology</pre>
+                                    </b></h2>
+                                <pre>There are several key technologies that are used in Automatic 
+License Plate Recognition (ALPR) systems.These include:</pre>
+                                <img src="{% static 'IMAGES/about/tech.jpg' %}" alt="Image not found" width="450px"
+                                    height="250px">
+                                <br><br>
+                                <pre>
+$Image Processing: Image processing techniques are used to 
+enhance the image captured by the camera, remove noise, and 
+improve the contrast and brightness of the image to make it 
+easier for the OCR software to read the license plate chara
+-cters.
+
+$Databases: ALPR systems use databases to store and match 
+license plate numbers. The databases may contain information
+on stolen vehicles, wanted criminals, or parking violations.</pre>
+                                <br><img src="{% static 'IMAGES/about/tech2.jpg' %}" alt="Image not found" width="450px"
+                                    height="250px">
+                            </td>
+                            <td style="padding-right: 50px;" class="about">
+                                <pre>
+$Cameras: High-quality cameras are used to capture clear 
+images of license plates,even in challenging lighting con
+-ditions. Cameras are typically mounted on poles or vehic
+-les and may be fixed or pan-tilt-zoom(PTZ) cameras that 
+can be controlled remotely.
+
+$Optical Character Recognition (OCR): OCR technology is 
+used to extract the alphanumeric characters on the license
+plate from the image captured by the camera. The OCR soft
+-ware uses pattern recognition algorithms and machine lea
+-rning techniques to identify the characters on the plate,
+even if they are distorted or partially obscured. <br>
+<img src="{% static 'IMAGES/about/tech3.jpg' %}" alt="Image not found" width="450px" height="250px">
+<br>
+$Communication Networks:ALPR systems often use communication 
+networks to transmit license plate data to a central database
+or other systems. This allows law enforcement agencies to qui
+-ckly identify vehicles of interest and take appropriate action.
+
+$Artificial Intelligence (AI): AI and machine learning techn
+-iques are increasingly being used in ALPR systems to improve
+accuracy and performance. AI algorithms can learn to recognize
+license plate patterns and can adapt to new license plate form
+-ats or lighting conditions.</pre>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
